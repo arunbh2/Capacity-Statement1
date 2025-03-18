@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical Action South Asia Capability Statement</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    /* Poster Container - A1 landscape dimensions ratio */
+    .poster {
+      width: 2384px; /* A1 width in pixels at 200 DPI */
+      height: 1684px; /* A1 height in pixels at 200 DPI */
+      background-color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+    }
+    
+    /* Practical Action Brand Colors */
+    :root {
+      --pa-yellow: #FFA600;
+      --pa-blue: #1B9CFC;
+      --pa-green: #2ECC71;
+      --pa-red: #E74C3C;
+      --pa-pink: #ED6A82;
+      --pa-light-gray: #f5f5f5;
+    }
+    
+    /* Header Section */
+    .header {
+      background-color: var(--pa-yellow);
+      color: white;
+      padding: 30px 60px;
+      background-image: linear-gradient(rgba(255, 166, 0, 0.85), rgba(255, 166, 0, 0.85)), url('/api/placeholder/2384/400');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header h1 {
+      font-size: 64px;
+      font-weight: bold;
+    }
+    
+    .header h2 {
+      font-size: 32px;
+      font-weight: normal;
+      margin-top: 10px;
+    }
+    
+    .logo-area {
+      text-align: right;
+    }
+    
+    .header .tagline {
+      font-size: 24px;
+      font-style: italic;
+      margin-top: 10px;
+    }
+    
+    /* Main Content Grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 30px;
+      gap: 30px;
+    }
+    
+    /* South Asia Map Section */
+    .map-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      margin: 0 30px;
+    }
+    
+    .map-container {
+      position: relative;
+      height: 280px;
+      background: var(--pa-light-gray);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .country-presence {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .country-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px;
+      border-radius: 6px;
+      background-color: var(--pa-light-gray);
+      font-size: 16px;
+    }
+    
+    .country-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: var(--pa-yellow);
+    }
+    
+    /* Approach Section */
+    .approach-section {
+      background-color: var(--pa-light-gray);
+      padding: 25px;
+      border-radius: 8px;
+    }
+    
+    .approach-content {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100%;
+    }
+    
+    .approach-header {
+      margin-bottom: 25px;
+    }
+    
+    .approach-header h3 {
+      font-size: 32px;
+      color: var(--pa-yellow);
+      margin-bottom: 15px;
+    }
+    
+    .approach-boxes {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 25px;
+    }
+    
+    .communities-box {
+      background-color: white;
+      border-left: 8px solid var(--pa-yellow);
+      padding: 25px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 25px;
+      align-items: center;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .box-icon {
+      width: 90px;
+      height: 90px;
+      background-color: var(--pa-light-gray);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 45px;
+      color: var(--pa-yellow);
+    }
+    
+    .box-content {
+      flex: 1;
+    }
+    
+    .communities-box h4 {
+      font-size: 26px;
+      color: var(--pa-yellow);
+      margin-bottom: 15px;
+    }
+    
+    .communities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .community-item {
+      background-color: var(--pa-light-gray);
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 100px;
+    }
+    
+    .community-item.orange {
+      border-left: 5px solid var(--pa-yellow);
+    }
+    
+    .community-item.green {
+      border-left: 5px solid var(--pa-green);
+    }
+    
+    .community-item.blue {
+      border-left: 5px solid var(--pa-blue);
+    }
+    
+    .community-item h5 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    
+    .item-icon {
+      width: 36px;
+      height: 36px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+    }
+    
+    .item-content {
+      flex: 1;
+    }
+    
+    /* Resilience Framework Section */
+    .resilience-header {
+      background-color: var(--pa-light-gray);
+      padding: 15px 25px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-radius: 8px;
+    }
+    
+    .resilience-header h3 {
+      font-size: 32px;
+      color: var(--pa-yellow);
+    }
+    
+    .resilience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    
+    .resilience-column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .resilience-box {
+      background-color: white;
+      padding: 20px;
+      height: 100%;
+      border-radius: 8px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 15px;
+    }
+    
+    .resilience-box.absorptive {
+      border-top: 8px solid var(--pa-red);
+    }
+    
+    .resilience-box.adaptive {
+      border-top: 8px solid var(--pa-blue);
+    }
+    
+    .resilience-box.transformative {
+      border-top: 8px solid var(--pa-green);
+    }
+    
+    .resilience-box h4 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .resilience-box ul {
+      padding-left: 25px;
+      font-size: 16px;
+    }
+    
+    .resilience-box li {
+      margin-bottom: 10px;
+    }
+    
+    .resilience-image {
+      height: 120px;
+      background-color: var(--pa-light-gray);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    
+    /* Experience Section */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .experience-box {
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 15px;
+    }
+    
+    .experience-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .experience-flag {
+      width: 60px;
+      height: 40px;
+      background-color: var(--pa-light-gray);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .experience-box h4 {
+      font-size: 28px;
+      color: var(--pa-yellow);
+    }
+    
+    .experience-content {
+      display: grid;
+      grid-template-columns: 40% 1fr;
+      gap: 20px;
+    }
+    
+    .experience-image {
+      background-color: var(--pa-light-gray);
+      border-radius: 6px;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .experience-details {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .experience-box h5 {
+      font-size: 20px;
+      margin: 12px 0 8px 0;
+      color: var(--pa-blue);
+    }
+    
+    .experience-box ul {
+      padding-left: 20px;
+      font-size: 16px;
+    }
+    
+    .experience-box li {
+      margin-bottom: 8px;
+    }
+    
+    /* Value Proposition Section */
+    .value-proposition {
+      background-color: var(--pa-light-gray);
+      padding: 25px;
+      border-radius: 8px;
+    }
+    
+    .value-proposition h3 {
+      font-size: 28px;
+      color: var(--pa-yellow);
+      margin-bottom: 20px;
+    }
+    
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .value-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      min-height: 180px;
+    }
+    
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--pa-light-gray);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: var(--pa-yellow);
+      flex-shrink: 0;
+    }
+    
+    .value-content {
+      flex: 1;
+    }
+    
+    .value-item h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--pa-yellow);
+    }
+    
+    .value-item ul {
+      padding-left: 20px;
+    }
+    
+    .value-item li {
+      margin-bottom: 6px;
+    }
+    
+    /* Impact Stats */
+    .impact-stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .stat-item {
+      flex: 1;
+      background-color: white;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 36px;
+      font-weight: bold;
+      color: var(--pa-yellow);
+    }
+    
+    .stat-label {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+    
+    /* Project Highlight Section */
+    .project-highlight {
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 0 30px 30px 30px;
+    }
+    
+    .project-highlight h3 {
+      font-size: 28px;
+      color: var(--pa-yellow);
+      margin-bottom: 20px;
+    }
+    
+    .project-slider {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    
+    .project-card {
+      background-color: var(--pa-light-gray);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .project-image {
+      height: 150px;
+      background-color: #ddd;
+      position: relative;
+    }
+    
+    .project-content {
+      padding: 15px;
+    }
+    
+    .project-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    
+    .project-location {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    
+    .project-description {
+      font-size: 14px;
+    }
+    
+    /* Footer Section */
+    .footer {
+      background-color: var(--pa-yellow);
+      color: white;
+      padding: 25px 60px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer h2 {
+      font-size: 32px;
+    }
+    
+    .footer p {
+      font-size: 24px;
+      font-style: italic;
+      margin-top: 5px;
+    }
+    
+    .contact-info {
+      font-size: 18px;
+      text-align: right;
+    }
+    
+    .contact-info div {
+      margin-bottom: 5px;
+    }
+    
+    /* Timeline Section */
+    .timeline-section {
+      margin: 0 30px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-section h3 {
+      font-size: 28px;
+      color: var(--pa-yellow);
+      margin-bottom: 20px;
+    }
+    
+    .timeline {
+      position: relative;
+      height: 100px;
+      background-color: var(--pa-light-gray);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .timeline-markers {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    
+    .timeline-marker {
+      text-align: center;
+    }
+    
+    .marker-year {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    .marker-event {
+      font-size: 14px;
+      max-width: 150px;
+    }
+    
+    /* Utility Classes */
+    .mb-5 {
+      margin-bottom: 5px;
+    }
+    
+    .mb-10 {
+      margin-bottom: 10px;
+    }
+    
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+    
+    .small-text {
+      font-size: 16px;
+    }
+    
+    .bold {
+      font-weight: bold;
+    }
+    
+    /* Download Button */
+    #download-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 30px;
+      background-color: var(--pa-yellow);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <button id="download-btn">Download Poster</button>
+  
+  <div class="poster">
+    <!-- Header Section with Background Image -->
+    <div class="header">
+      <div class="header-content">
+        <div>
+          <h1>CAPABILITY STATEMENT: SOUTH ASIA</h1>
+          <h2>Urban Resilience and Climate Adaptation</h2>
+          <div class="tagline">Building resilience for a better world in South Asia since the 1980s</div>
+          <div class="tagline bold">Big change starts small</div>
+        </div>
+        <div class="logo-area">
+          <img src="/api/placeholder/300/120" alt="Practical Action Logo">
+        </div>
+      </div>
+    </div>
+    
+    <!-- South Asia Map & Introduction Section -->
+    <div class="map-section">
+      <div>
+        <h3 style="color: var(--pa-yellow); font-size: 28px; margin-bottom: 15px;">ABOUT PRACTICAL ACTION IN SOUTH ASIA</h3>
+        <p style="font-size: 16px; margin-bottom: 15px;">Practical Action is an innovative international development organisation putting ingenious ideas to work across South Asia since the 1980s. With annual income of £30M, we operate as a UK-registered charity with local registrations in multiple South Asian countries including Nepal (1979), Bangladesh (1990), and India (1982).</p>
+        <p style="font-size: 16px; margin-bottom: 15px;">Our work focuses on four key thematic areas: <strong>Energy that Transforms</strong>, <strong>Farming that Works</strong>, <strong>Cities Fit for People</strong>, and <strong>Resilience that Protects</strong>. We combine innovative technologies with community-driven approaches to create lasting, sustainable changes.</p>
+        
+        <div class="impact-stats">
+          <div class="stat-item">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Years in South Asia</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Country Offices</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">250K+</div>
+            <div class="stat-label">Lives Improved</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$30M+</div>
+            <div class="stat-label">Annual Funding</div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="map-container">
+          <!-- Replace with actual South Asia map -->
+          <img src="/api/placeholder/600/280" alt="South Asia Map" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <div class="country-presence" style="margin-top: 15px;">
+          <div class="country-item">
+            <div class="country-dot"></div>
+            <strong>Nepal</strong> - Since 1979, focusing on disaster risk reduction, early warning systems, and community resilience
+          </div>
+          <div class="country-item">
+            <div class="country-dot"></div>
+            <strong>Bangladesh</strong> - Since 1990, specializing in climate adaptation, flood resilience, and urban solutions
+          </div>
+          <div class="country-item">
+            <div class="country-dot"></div>
+            <strong>India</strong> - Since 1982, implementing climate resilience and adaptive agricultural solutions
+          </div>
+          <div class="country-item">
+            <div class="country-dot"></div>
+            <strong>Sri Lanka</strong> - Regional programs targeting coastal resilience and disaster management
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Timeline Section -->
+    <div class="timeline-section">
+      <h3>FOUR DECADES OF IMPACT IN SOUTH ASIA</h3>
+      <div class="timeline">
+        <!-- Replace with actual timeline graphic -->
+        <img src="/api/placeholder/2320/100" alt="Timeline" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="timeline-markers">
+        <div class="timeline-marker">
+          <div class="marker-year">1979</div>
+          <div class="marker-event">First office in Nepal established</div>
+        </div>
+        <div class="timeline-marker">
+          <div class="marker-year">1990</div>
+          <div class="marker-event">Expansion to Bangladesh</div>
+        </div>
+        <div class="timeline-marker">
+          <div class="marker-year">2013</div>
+          <div class="marker-event">Zurich Flood Resilience Alliance formed</div>
+        </div>
+        <div class="timeline-marker">
+          <div class="marker-year">2018</div>
+          <div class="marker-event">5-hour early warning lead time achieved in Nepal</div>
+        </div>
+        <div class="timeline-marker">
+          <div class="marker-year">2021</div>
+          <div class="marker-event">Index-Based Flood Insurance launched</div>
+        </div>
+        <div class="timeline-marker">
+          <div class="marker-year">2025</div>
+          <div class="marker-event">Integrating with ADB's urban master plans</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="content-grid">
+      <!-- Left Column - Approaches and Communities -->
+      <div class="approach-section">
+        <div class="approach-content">
+          <div class="approach-header">
+            <h3>COMMUNITIES AT THE HEART OF RESILIENCE</h3>
+            <p class="small-text mb-20">Practical Action serves as an ecosystem enabler for community-led transformation in urban resilience through three interconnected pillars:</p>
+          </div>
+          
+          <div class="approach-boxes">
+            <div class="communities-box">
+              <div class="box-icon">1</div>
+              <div class="box-content">
+                <h4>COMMUNITY ENGAGEMENT & EVIDENCE-BASED PLANNING</h4>
+                <div class="communities-grid">
+                  <div class="community-item orange">
+                    <div class="item-icon">A</div>
+                    <div class="item-content">
+                      <h5>RISK ASSESSMENT</h5>
+                      <p>Community-based assessments of systems, exposure, susceptibility, and risk zonation</p>
+                    </div>
+                  </div>
+                  <div class="community-item orange">
+                    <div class="item-icon">B</div>
+                    <div class="item-content">
+                      <h5>CAPACITY ENHANCEMENT</h5>
+                      <p>Strengthening local bodies, communities, and systems through training and institutional development</p>
+                    </div>
+                  </div>
+                  <div class="community-item orange">
+                    <div class="item-icon">C</div>
+                    <div class="item-content">
+                      <h5>PLANNING</h5>
+                      <p>Technology, funding, and multi-stakeholder collaboration to address identified risks and vulnerabilities</p>
+                    </div>
+                  </div>
+                  <div class="community-item orange">
+                    <div class="item-icon">D</div>
+                    <div class="item-content">
+                      <h5>PRACTICAL SOLUTIONS</h5>
+                      <p>Contextual, local, community-led green infrastructure and nature-based solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="communities-box">
+              <div class="box-icon">2</div>
+              <div class="box-content">
+                <h4>CO-CREATING RESILIENT SOLUTIONS</h4>
+                <div class="communities-grid">
+                  <div class="community-item green">
+                    <div class="item-icon">A</div>
+                    <div class="item-content">
+                      <h5>RISK REDUCTION</h5>
+                      <p>Community-based early warning systems, rescue protocols, and response mechanisms</p>
+                    </div>
+                  </div>
+                  <div class="community-item green">
+                    <div class="item-icon">B</div>
+                    <div class="item-content">
+                      <h5>INTEGRATED SOLUTIONS</h5>
+                      <p>Multisectoral, intermediate, community-led and owned interventions for climate resilience</p>
+                    </div>
+                  </div>
+                  <div class="community-item green">
+                    <div class="item-icon">C</div>
+                    <div class="item-content">
+                      <h5>RESOURCE RECOVERY</h5>
+                      <p>Circular planning, nature-based solutions, and low carbon approaches to urban systems</p>
+                    </div>
+                  </div>
+                  <div class="community-item green">
+                    <div class="item-icon">D</div>
+                    <div class="item-content">
+                      <h5>PARTICIPATORY APPROACH</h5>
+                      <p>Engaging communities, private sector, and local bodies in joint resilience initiatives</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="communities-box">
+              <div class="box-icon">3</div>
+              <div class="box-content">
+                <h4>COMMUNITY-LED LEARNING & IMPACT</h4>
+                <div class="communities-grid">
+                  <div class="community-item blue">
+                    <div class="item-icon">A</div>
+                    <div class="item-content">
+                      <h5>COMMUNITY-LED MONITORING</h5>
+                      <p>Evidence generation mechanisms and system efficiency measures owned by communities</p>
+                    </div>
+                  </div>
+                  <div class="community-item blue">
+                    <div class="item-icon">B</div>
+                    <div class="item-content">
+                      <h5>RESILIENCE MEASUREMENT</h5>
+                      <p>Progressive goalposts and easy-to-use measurement tools for ongoing assessment</p>
+                    </div>
+                  </div>
+                  <div class="community-item blue">
+                    <div class="item-icon">C</div>
+                    <div class="item-content">
+                      <h5>HANDHOLDING SUPPORT</h5>
+                      <p>Technical support and continued relationships with communities for long-term impact</p>
+                    </div>
+                  </div>
+                  <div class="community-item blue">
+                    <div class="item-icon">D</div>
+                    <div class="item-content">
+                      <h5>LIVING LABS</h5>
+                      <p>Continuous evaluation and evidence-based reconfiguration for improved outcomes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column - Framework, Experience, Value -->
+      <div style="display: flex; flex-direction: column; gap: 25px;">
+        <!-- Resilience Framework Section -->
+        <div>
+          <div class="resilience-header">
+            <img src="/api/placeholder/70/70" alt="Resilience Icon" style="border-radius: 50%;">
+            <h3>STRENGTHENING RESILIENCE AT THREE LEVELS</h3>
+          </div>
+          
+          <div class="resilience-grid">
+            <div class="resilience-column">
+              <div class="resilience-box absorptive">
+                <div class="resilience-image">
+                  <img src="/api/placeholder/600/120" alt="Absorptive Capacity" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                  <h4>1. ABSORPTIVE CAPACITY<br>Risk Reduction & Anticipatory Action</h4>
+                  <ul>
+                    <li><strong>Early Warning Systems:</strong> End-to-end design, last-mile connectivity, gender inclusion, and multi-hazard coverage. In Nepal, increased warning lead time by 5 hours.</li>
+                    <li><strong>Disaster Risk Management:</strong> Risk-informed planning, institutional capacity building, and standard operating procedures for response.</li>
+                    <li><strong>Climate Vulnerability Assessment:</strong> Participatory tools, spatial risk mapping, and infrastructure assessment methodologies.</li>
+                    <li><strong>Climate-Resilient Infrastructure:</strong> Resilient design standards, nature-based solutions, and community management protocols.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="resilience-column">
+              <div class="resilience-box adaptive">
+                <div class="resilience-image">
+                  <img src="/api/placeholder/600/120" alt="Adaptive Capacity" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                  <h4>2. ADAPTIVE CAPACITY<br>Climate-Smart Adaptation Planning</h4>
+                  <ul>
+                    <li><strong>Nature-Based Solutions:</strong> Urban ecosystem services, green-gray integration, participatory
+                      design, carbon sequestration co-benefits, and ecological restoration.</li>
+                    <li><strong>Climate-Resilient WASH:</strong> Climate-proofed design, diversified water sources, decentralized solutions, and inclusive service delivery models.</li>
+                    <li><strong>Innovative Financing:</strong> Risk transfer mechanisms, community-based savings, blended finance models. Successfully implemented flood insurance for 935 farmers through 12 cooperatives.</li>
+                    <li><strong>Circular Resource Systems:</strong> Waste-to-resource models, water reuse, value chain development, and low-carbon materials for sustainable urban environments.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="resilience-column">
+              <div class="resilience-box transformative">
+                <div class="resilience-image">
+                  <img src="/api/placeholder/600/120" alt="Transformative Capacity" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                  <h4>3. TRANSFORMATIVE CAPACITY<br>Scaled Decentralized Solutions</h4>
+                  <ul>
+                    <li><strong>Policy Development:</strong> Climate-integrated planning, decentralized decision-making, rights-based approaches, and cross-sectoral coordination frameworks.</li>
+                    <li><strong>Institutional Capacity:</strong> Technical training, knowledge management, stakeholder engagement, and financial management for local authorities.</li>
+                    <li><strong>Evidence-Based Decision Making:</strong> Local climate information systems, impact evaluation, cost-benefit analysis, and learning platforms for continuous improvement.</li>
+                    <li><strong>Cross-Sectoral Integration:</strong> Multi-stakeholder platforms, integrated planning, and collaborative implementation mechanisms for cohesive approaches.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Regional Experience Section -->
+        <div class="experience-grid">
+          <div class="experience-box">
+            <div class="experience-header">
+              <div class="experience-flag">
+                <img src="/api/placeholder/60/40" alt="Nepal Flag" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h4>NEPAL EXPERIENCE (Since 1979)</h4>
+            </div>
+            
+            <div class="experience-content">
+              <div class="experience-image">
+                <img src="/api/placeholder/350/300" alt="Nepal Project" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              
+              <div class="experience-details">
+                <div>
+                  <h5>Multi-Hazard Early Warning Systems</h5>
+                  <ul>
+                    <li>Community-centric EWS for Landslides (2023-25): Protecting 52,420 people in Bagmati Province through rainfall thresholds and community protocols</li>
+                    <li>EWS for Hydro-Meteorological Disaster (2022-24): Benefiting 59,472 people directly and 137,636 indirectly through strengthened local flood early warning</li>
+                    <li>Zurich Flood Resilience Alliance (2013-24): Building community resilience in Bardiya and Kailali districts through assessment frameworks and local action</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5>Innovative Finance & Urban Resilience</h5>
+                  <ul>
+                    <li>Index-Based Flood Insurance (2021-ongoing): Parametric insurance for 935 farmers through 12 cooperatives covering 134 hectares of paddy fields</li>
+                    <li>Building Disaster Resilient Communities (2012-14): Implemented in Pokhara Sub-Metropolitan City with local government bodies and civil society</li>
+                    <li>BISWASH - Building Back Better (2016-17): Enhanced urban resilience in Panauti Municipality focusing on WASH systems</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="experience-box">
+            <div class="experience-header">
+              <div class="experience-flag">
+                <img src="/api/placeholder/60/40" alt="Bangladesh Flag" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h4>BANGLADESH EXPERIENCE (Since 1990)</h4>
+            </div>
+            
+            <div class="experience-content">
+              <div class="experience-image">
+                <img src="/api/placeholder/350/300" alt="Bangladesh Project" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              
+              <div class="experience-details">
+                <div>
+                  <h5>Climate Resilience Measurement</h5>
+                  <ul>
+                    <li>Climate Resilience Measurement for Communities (CRMC): Implementing framework in Faridpur, Satkhira, and Khulna until 2035, addressing multiple hazards including floods, heatwaves, and wildfires</li>
+                    <li>Zurich Climate Resilience Alliance: Positively impacted approximately 250,000 individuals with enhanced disaster resilience capabilities</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5>Locally Led Adaptation</h5>
+                  <ul>
+                    <li>People's Adaptation Plan (2025-26): Developing inclusive plans for Narayanganj City Corporation, integrated with ADB's US$155M 'Narayanganj Green and Resilient Urban Master Plan'</li>
+                    <li>Ecosystem-based Adaptation (2023-27): Working in the Sundarbans and Hakaluki Haor for climate resilience through nature-based adaptation solutions</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5>Digital Innovation in Early Warning</h5>
+                  <ul>
+                    <li>'Disaster Alert for Bangladesh' (2023-25): Mobile application developed with the Ministry of Disaster Management and Relief for improved early warning dissemination</li>
+                    <li>Youth Engagement in EWS (2024-26): Building capacity of youth volunteers in climate hazardous areas as resilience agents</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Value Proposition Section -->
+        <div class="value-proposition">
+          <h3>VALUE PROPOSITION FOR URBAN RESILIENCE PROGRAMS IN SOUTH ASIA</h3>
+          
+          <div class="value-grid">
+            <div class="value-item">
+              <div class="value-icon">
+                <i>✓</i>
+              </div>
+              <div class="value-content">
+                <h4>Established Local Presence</h4>
+                <ul>
+                  <li>Legal registration in target countries since the 1980s</li>
+                  <li>Regulatory expertise and compliance</li>
+                  <li>Cultural competence and contextual knowledge</li>
+                  <li>Extensive local networks and partnerships</li>
+                  <li>Cross-regional knowledge exchange</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i>✓</i>
+              </div>
+              <div class="value-content">
+                <h4>Multi-Level Resilience Building</h4>
+                <ul>
+                  <li>Household-level interventions for most vulnerable</li>
+                  <li>Community systems strengthening for collective action</li>
+                  <li>Municipal governance support for institutionalization</li>
+                  <li>Policy influence for scaled impact and replication</li>
+                  <li>Cross-sectoral approach spanning environment, infrastructure, and social systems</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i>✓</i>
+              </div>
+              <div class="value-content">
+                <h4>Technical Leadership</h4>
+                <ul>
+                  <li>Early warning systems expertise with extended lead times</li>
+                  <li>Climate risk assessment methodologies based on local context</li>
+                  <li>Adaptation planning experience in diverse geographies</li>
+                  <li>Nature-based solution innovations for urban environments</li>
+                  <li>Digital tools for resilience measurement and monitoring</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i>✓</i>
+              </div>
+              <div class="value-content">
+                <h4>Strong Government Relations</h4>
+                <ul>
+                  <li>National ministry partnerships across South Asia</li>
+                  <li>Provincial authority collaboration on implementation</li>
+                  <li>Municipal government engagement for local action</li>
+                  <li>Local authority coordination and capacity building</li>
+                  <li>Policy advisory and regulatory framework development</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i>✓</i>
+              </div>
+              <div class="value-content">
+                <h4>Community Engagement Excellence</h4>
+                <ul>
+                  <li>Inclusive, gender-sensitive methodologies</li>
+                  <li>Participatory planning approaches that center marginalized voices</li>
+                  <li>Social mobilization techniques with proven results</li>
+                  <li>Feedback mechanisms for continuous improvement</li>
+                  <li>Long-term community relationships built on trust</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i>✓</i>
+              </div>
+              <div class="value-content">
+                <h4>Evidence-Based Planning</h4>
+                <ul>
+                  <li>Climate information services tailored to local needs</li>
+                  <li>Economic analysis tools for cost-benefit assessment</li>
+                  <li>Impact measurement frameworks like CRMC</li>
+                  <li>Learning systems for adaptive management</li>
+                  <li>Knowledge management for cross-regional application</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Highlight Section -->
+    <div class="project-highlight">
+      <h3>FEATURED RESILIENCE PROJECTS ACROSS SOUTH ASIA</h3>
+      
+      <div class="project-slider">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="/api/placeholder/400/150" alt="Project 1" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-content">
+            <div class="project-title">Early Warning System Innovation</div>
+            <div class="project-location">Karnali Basin, Nepal</div>
+            <div class="project-description">Increased flood warning lead time from 2 to 7 hours using probabilistic forecasting models and community-based dissemination.</div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <img src="/api/placeholder/400/150" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-content">
+            <div class="project-title">Disaster Alert for Bangladesh</div>
+            <div class="project-location">Multi-district, Bangladesh</div>
+            <div class="project-description">Mobile application providing early warnings, evacuation routes, and coordination support for communities in disaster-prone areas.</div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <img src="/api/placeholder/400/150" alt="Project 3" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-content">
+            <div class="project-title">Index-Based Flood Insurance</div>
+            <div class="project-location">Nepal River Basins</div>
+            <div class="project-description">Parametric insurance product providing financial protection to farmers in flood-prone regions, linked to early warning systems.</div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-image">
+            <img src="/api/placeholder/400/150" alt="Project 4" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-content">
+            <div class="project-title">Ecosystem-based Adaptation</div>
+            <div class="project-location">Sundarbans, Bangladesh</div>
+            <div class="project-description">Nature-based solutions for climate resilience, biodiversity conservation, and alternative livelihoods in ecologically critical areas.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <div class="footer">
+      <div>
+        <h2>Strengthening Resilience: ABSORPTIVE → ADAPTIVE → TRANSFORMATIVE</h2>
+        <p>Community-centered approach for a resilient South Asia</p>
+      </div>
+      
+      <div class="contact-info">
+        <div>Practical Action Nepal: nepal@practicalaction.org</div>
+        <div>Practical Action Bangladesh: practicalaction@practicalaction.org.bd</div>
+        <div>Practical Action India: india@practicalaction.org</div>
+        <div>www.practicalaction.org</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Download function (in a real setting this would use html2canvas, jsPDF or similar)
+    document.getElementById('download-btn').addEventListener('click', function() {
+      alert('In a real application, this would trigger a download of the poster as a high-resolution PDF or image file.');
+    });
+  </script>
+</body>
+</html>
